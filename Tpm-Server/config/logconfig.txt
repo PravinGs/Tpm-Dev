@@ -1,0 +1,35 @@
+1.Create a config file  
+sudo vim /etc/rsyslog.d/tls-server.conf
+2.Create a log file to store logs.
+sudo touch /var/log/tls-server.log
+3.change its group name to the syslog
+sudo chgrp syslog /var/log/tls-server.log 
+4.add write permission to the syslog group
+sudo chmod g+w /var/log/tls-server.log 
+5.add user to the syslog group
+sudo usermod -a -G syslog ubuntu
+6.Change read only mode to other users. 
+sudo chmod o-r /var/log/tls-server.log 
+7.update the rsyslog/syslog service
+sudo systemctl restart rsyslog.service 
+sudo systemctl restart syslog.service 
+
+
+
+#Logger mechanism 
+
+1.Config file will have the dir path which contains all the log files.
+2.Log params defined in the config file.
+3.the fixed or threshold file size should bo configured.
+4.
+
+/* default Format.
+path=/home/ubuntu/Desktop/devrep/Tpm-Server/temp-log
+sep=|
+count=5
+name1=Timestamp
+name2=UserId
+name3=MachineName
+name4=Level
+name5=Message
+*/

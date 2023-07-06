@@ -1,0 +1,7 @@
+tpm-Server/*.layout
+Tpm-Server/secrets
+Tpm-Server/*.o
+Tpm-Client/*.o
+Tpm-Client/*.layout
+
+
